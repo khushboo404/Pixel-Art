@@ -186,6 +186,113 @@ header .title a{
     border-radius: 20px
 }
 
+/* right panel */
+
+.right-panel{
+    float: right;
+    margin-top: 50px;
+}
+
+.right-panel-base{
+    width: 60%;
+}
+
+.reset-grid button{
+    width: 150px;
+    height: 60px;
+    border: 1px solid;
+    box-shadow: 5px 5px #888888;
+}
+
+.col-size{
+    margin-top: 20px;
+    display: flex;
+    height: 60px;
+}
+
+.col-size .col-value{
+    border: 1px solid;
+    box-shadow: 5px 5px #888888;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding-left: 5px;
+}
+
+.col-size .col{
+    margin: 0;
+    margin-top: 15px;
+}
+
+.row-size{
+    margin-top: 20px;
+    display: flex;
+    height: 60px;
+}
+
+.row-size .row-value{
+    border: 1px solid;
+    box-shadow: 5px 5px #888888;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding-left: 5px;
+}
+
+.row-size .row{
+    margin: 0;
+    margin-top: 15px;
+}
+
+.submit{
+    margin-top: 20px;
+}
+
+.submit button{
+    width: 150px;
+    height: 60px;
+    border: 1px solid;
+    box-shadow: 5px 5px #888888;
+}
+
+/* middle panel */
+
+.mid-panel{
+    /* float: center; */
+    margin-top: 50px;
+}
+
+.mid-panel-base{
+    padding: 0 40px;
+}
+
+table,
+  tr,
+  td {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  tr {
+    height: 20px;
+  }
+  
+  td {
+    width: 20px;
+  }
+
+  .mid-panel-components table{
+      cursor: cell;
+  }
+
+  .main{
+    display: flex;
+    justify-content: space-between;
+  }
 
 
 @font-face {
@@ -195,3 +302,4 @@ header .title a{
     font-weight: 400;
     font-style: normal
 }
+
