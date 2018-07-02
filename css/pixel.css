@@ -92,44 +92,98 @@ header .title a{
     font-size: 30px;
 }
 
-.color-selector{
+.color-selector-row1{
     display: flex;
     margin-top: 40px;
     height: 40px;
 }
 
-.color-selector .btn-pallete{
+.color-selector-row1 .btn-pallete{
     float: left;
     border: 2px solid #585858;
     border-width: 2px;
 }
 
-.color-selector button{
+.color-selector-row1 button{
     border-radius: 20px;
 }
 
-.color-selector .btn-red{
+.color-selector-row1 .btn-red{
     background-color: red;
 }
 
-.color-selector .btn-green{
+.color-selector-row1 .btn-green{
     background-color: green;
 }
 
-.color-selector .btn-blue{
+.color-selector-row1 .btn-blue{
     background-color: blue;
 }
 
-.color-selector .btn-orange{
+.color-selector-row1 .btn-orange{
     background-color: orange;
 }
 
-.color-selector .btn-white{
+.color-selector-row1 .btn-white{
     background-color: white;
 }
 
-.color-selector .btn-black{
+.color-selector-row1 .btn-black{
     background-color: black;
+}
+
+/* color selector row 2 */
+
+.color-selector-row2{
+    display: flex;
+    margin-top: 5px;
+    height: 40px;
+}
+
+.color-selector-row2 .btn-pallete{
+    float: left;
+    border: 2px solid #585858;
+    border-width: 2px;
+}
+
+.color-selector-row2 button{
+    border-radius: 20px;
+}
+
+.color-selector-row2 .btn-aqua{
+    background-color: aqua;
+}
+
+.color-selector-row2 .btn-blueviolet{
+    background-color: blueviolet;
+}
+
+.color-selector-row2 .btn-brown{
+    background-color: brown;
+}
+
+.color-selector-row2 .btn-chartreuse{
+    background-color: chartreuse;
+}
+
+.color-selector-row2 .btn-cornflowerblue{
+    background-color: cornflowerblue;
+}
+
+.color-selector-row2 .btn-crimson{
+    background-color: crimson;
+}
+
+/* color picker */
+
+.color-selector-colorpicker{
+    margin-top: 15px;
+}
+
+.colorpicker{
+    width: 100%;
+    height: 30px;
+    border-radius: 20px
 }
 
 
