@@ -1,3 +1,17 @@
+// Lad grid with 50*20
+const height = $("#inputHeight").val();
+const weight = $("#inputWidth").val();
+for(let i=0;i<height;i++){
+    let row = "<tr>";
+    for(let j=0;j<weight;j++){
+        row+=`<td id='${i}_${j}'></td>`;
+    }
+    row+="</tr>";
+    $("#pixelCanvas").append(row);
+
+}  
+
+
 let colorSelected = "#000";
 
 function makeGrid() {
@@ -7,14 +21,14 @@ function makeGrid() {
      
       // Select size input
       
-      const height = $("#inputHeight").val();
-        const weight = $("#inputWidth").val();
+    const height = $("#inputHeight").val();
+    const weight = $("#inputWidth").val();
   
       
    for(let i=0;i<height;i++){
           let row = "<tr>";
           for(let j=0;j<weight;j++){
-              row+="<td></td>";
+              row+=`<td id='${i}_${j}'></td>`;
           }
           row+="</tr>";
           $("#pixelCanvas").append(row);
@@ -39,7 +53,7 @@ function setColor(color){
 // Eraser function
 
 function eraser(){
-    colorSelected = "#2F4F4F";
+    colorSelected = "";
   }
     
 
@@ -53,17 +67,17 @@ $("#colorPicker").on("change", ()=>{
       $(this).css("background-color", colorSelected);
   });
   
-  let down;
+  let down = false;
   
   $(document).mousedown(function () {
-      Down = true;
+      down = true;
   })
   $(document).mouseup(function () {
-      Down = false;
+      down = false;
   });
   
   $('table').on('mouseover', 'td', function () {
-      if (Down) {
+      if (down) {
         var color = colorSelected;
           $(this).css( 'background', color);
       }
@@ -81,8 +95,8 @@ $("#colorPicker").on("change", ()=>{
       
    for(let i=0;i<height;i++){
         for(let j=0;j<weight;j++){
-            $(this).css('background-color','#2F4F4F');
-            // $(`#${i}_${j}`).css("background-color",'#2F4F4F');
+            // $(this).css('background-color','#2F4F4F');
+            $(`#${i}_${j}`).css("background-color",'');
           }
       }  
   }
