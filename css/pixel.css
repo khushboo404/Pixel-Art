@@ -1,18 +1,19 @@
 body{
     font-family: minecraftiaregular,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
-    background-color: darkslategrey;
+    /* background-color: darkslategrey; */
+    background-image: url("../img/7.jpg");
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-button:hover {background-color: cornflowerblue}
+/* button:hover {background-color: #b39494;} */
 
 button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.button:hover {background-color: cornflowerblue}
+/* .button:hover {background-color: cornflowerblue} */
 
 .button:active {
     box-shadow: 0 5px #666;
@@ -65,7 +66,7 @@ header .title a{
 }
 
 .left-panel-base{
-    width: 60%;
+    width: 100%;
 }
 
 .new-art button{
@@ -237,6 +238,10 @@ header .title a{
     margin-top: 15px;
 }
 
+.col-size h4{
+    color: darkgray;
+}
+
 .row-size{
     margin-top: 20px;
     display: flex;
@@ -255,6 +260,10 @@ header .title a{
 .row-size .row{
     margin: 0;
     margin-top: 15px;
+}
+
+.row-size h4{
+    color: darkgray;
 }
 
 .submit{
@@ -282,7 +291,7 @@ header .title a{
 table,
   tr,
   td {
-    border: 1px solid black;
+    border: 1px solid white;
   }
   
   table {
@@ -300,6 +309,11 @@ table,
 
   .mid-panel-components table{
       cursor: cell;
+  }
+
+  .mid-panel-components h2{
+      color: darkgray;
+      text-align: center;
   }
 
   .main{
