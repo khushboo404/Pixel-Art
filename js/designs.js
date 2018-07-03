@@ -35,6 +35,12 @@ function makeGrid() {
 function setColor(color){
     colorSelected = color;
 }
+
+// Eraser function
+
+function eraser(){
+    colorSelected = "#2F4F4F";
+  }
     
 
 $("#colorPicker").on("change", ()=>{
@@ -75,7 +81,8 @@ $("#colorPicker").on("change", ()=>{
       
    for(let i=0;i<height;i++){
         for(let j=0;j<weight;j++){
-              $(`#${i}_${j}`).css("background-color",'');
+            $(this).css('background-color','#2F4F4F');
+            // $(`#${i}_${j}`).css("background-color",'#2F4F4F');
           }
       }  
   }
