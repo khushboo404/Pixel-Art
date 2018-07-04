@@ -1,7 +1,7 @@
 body{
     font-family: minecraftiaregular,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
-    /* background-color: darkslategrey; */
-    background-image: url("../img/7.jpg");
+    background-color: darkslategrey;
+    /* background-image: url("../img/1.jpg"); */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -208,7 +208,7 @@ header .title a{
 }
 
 .right-panel-base{
-    width: 60%;
+    width: 100%;
 }
 
 .reset-grid button{
@@ -321,6 +321,33 @@ table,
     justify-content: space-between;
   }
 
+  /* theme change */
+
+  .theme-change{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+#greenBackground{
+    background-color: #008000;
+    height: 30px;
+}
+
+#blueBackground{
+    background-color: blue;
+    height: 30px;
+}
+
+#greyBackground{
+    background-color: grey;
+    height: 30px;
+}
+
+#whiteBackground{
+    background-color: white;
+    height: 30px;
+}
 
 @font-face {
     font-family: minecraftiaregular;
