@@ -107,3 +107,8 @@ $("#colorPicker").on("change", ()=>{
     $("#pixelCanvas").empty();
   }
   
+// theme change
+
+function changeTheme(color){
+$("body").css('background-color',color);
+}
