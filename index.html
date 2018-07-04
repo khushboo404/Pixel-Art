@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Pixel Art Maker!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/styles.css"> -->
     <link rel="stylesheet" href="css/pixel.css">
 </head>
-<body>
+<body class="bg">
     <header>
       <div class="project-title">
         <h1>Pixel Art Maker</h1>
@@ -29,11 +32,11 @@
             </div>
             <div class="undo-redo">
               <button type="button" class="btn btn-default" style="margin-right: 20px;"><i class="fas fa-undo"></i></button>
-              <button type="button" class="btn btn-default" style="margin-left: 20px;"><i class="fas fa-redo"></i></button>
+              <button type="button" class="btn btn-default" style="margin-left: 20px;" onclick="play()"><i class="fas fa-play"></i></button>
             </div>
             <div class="eraser-paint">
               <button type="button" class="btn btn-default" onclick="eraser()" style="margin-right: 20px;"><i class="fas fa-eraser"></i></button>
-              <button type="button" class="btn btn-default" style="margin-left: 20px;"><i class="fas fa-paint-brush"></i></button>
+              <button type="button" class="btn btn-default" onclick="selectColor()" style="margin-left: 20px;"><i class="fas fa-eye-dropper"></i></button>
             </div>
             <div class="color-selector-row1">
               <button type="button" class="btn btn-pallete btn-red" onclick="setColor('#FF0000')"></button>
@@ -54,6 +57,9 @@
             <div class="color-selector-colorpicker">
               <input type="color" class="colorpicker" id="colorPicker">
             </div>
+            <div class="download">
+              <button type="button" class="btn btn-danger" onclick="downloadGrid()">DOWNLOAD</button>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +67,13 @@
         <div class="mid-panel-base">
           <div class="mid-panel-components">
               <h2>Design Canvas</h2>
+              <div class="animated wobble" id="theme-change">
+                <button type="button" class="btn btn-default" onclick="changeTheme('#001a00')" id="greenBackground"></button>
+                <button type="button" class="btn btn-default" onclick="changeTheme('#00001a')"  id="blueBackground"></button>
+                <button type="button" class="btn btn-default" onclick="changeTheme('#404040')"  id="greyBackground"></button>
+                <button type="button" class="btn btn-default" onclick="changeTheme('#808000')" id="whiteBackground"></button>
+                <button type="button" class="btn btn-default" onclick="addBackground()" id="original"></button>
+                </div>
               <table id="pixelCanvas"></table>
           </div>
         </div>
@@ -84,46 +97,11 @@
                 <input type="submit" value="SUBMIT" class="btn btn-default button" style="width: 137px;border: 1px solid;
                 box-shadow: 5px 5px #888888;">
                 </div>
-            </form>
-            <div class="theme-change">
-            <button type="button" class="btn btn-default" onclick="changeTheme('#A52A2A')" id="greenBackground"></button>
-            <button type="button" class="btn btn-default" onclick="changeTheme('#FFFFFF')"  id="blueBackground"></button>
-            <button type="button" class="btn btn-default" onclick="changeTheme('#00FFFF')"  id="greyBackground"></button>
-            <button type="button" class="btn btn-default" onclick="changeTheme('#008000')" id="whiteBackground"></button>
-            </div>
+            </form>            
             </div>
             </div>
       </div>
     </div>
-      </div>
-    </div>
-  <!-- <div class="text animated bounce">
-    <h1>Lab: Pixel Art Maker</h1>
-  </div>
-  <div class="text animated rubberBand">
-    <h2>Choose Grid Size</h2>
-  </div>
-    <form id="sizePicker" style="color: wheat;">
-        Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" value="1"> Grid Width:
-        <input type="number" id="inputWidth" name="width" min="1" value="1">
-        <input type="submit" value="Submit" style="background-color: #ffc107">
-    </form>
-  <div class="text animated rubberBand"> 
-    <h2>Pick A Color</h2>
-  </div>
-    <input type="color" id="colorPicker">
-  
-  	<br>
-  	<br>
-  
-	<button type="button" onclick="resetGrid()" class="btn btn-warning">Reset Grid</button>
-  <div class="text animated bounce">
-    <h2>Design Canvas</h2>
-  </div>
-    <table id="pixelCanvas"></table> -->
-
     <script src="js/designs.js"></script>
 </body>
-
 </html>
