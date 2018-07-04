@@ -1,6 +1,13 @@
 // Lad grid with 50*20
 const height = $("#inputHeight").val();
 const weight = $("#inputWidth").val();
+
+let dropper = false;
+
+let points = [];
+let pointsList = [];
+
+
 for(let i=0;i<height;i++){
     let row = "<tr>";
     for(let j=0;j<weight;j++){
@@ -12,7 +19,7 @@ for(let i=0;i<height;i++){
 }  
 
 
-let colorSelected = "#000";
+let colorSelected = "#FFA500";
 
 function makeGrid() {
     //Empty Grid 
@@ -64,7 +71,17 @@ $("#colorPicker").on("change", ()=>{
   // Select color input
   
   $( "#pixelCanvas" ).on( "click", "td", function( event ) {
-      $(this).css("background-color", colorSelected);
+    if(dropper){
+        dropper = false;
+        colorSelected = $(this).css("background-color");
+        return;
+    }
+
+    $(this).css("background-color", colorSelected);
+    points.push({
+        axis: $(this).attr('id'),
+        color: colorSelected
+    });
   });
   
   let down = false;
@@ -80,6 +97,11 @@ $("#colorPicker").on("change", ()=>{
       if (down) {
         var color = colorSelected;
           $(this).css( 'background', color);
+
+          points.push({
+              axis: $(this).attr('id'),
+              color: colorSelected
+          });
       }
   });
   
@@ -110,5 +132,34 @@ $("#colorPicker").on("change", ()=>{
 // theme change
 
 function changeTheme(color){
-$("body").css('background-color',color);
+    $("body").removeClass("bg");
+    $("body").css('background-color',color);
+}
+
+function addBackground(){
+    $("body").addClass("bg");
+}
+
+function downloadGrid(){
+    setTimeout(()=>{
+        html2canvas(document.querySelector("#pixelCanvas")).then(canvas => {
+        canvas.toBlob(function(blob){ saveAs(blob,"pic.png"); });
+        });
+    },0);
+}
+
+
+
+function selectColor(){
+    dropper = true;
+}
+
+function play(){
+    resetGrid();
+    for(let i in points){
+        setTimeout( function() {
+            $(`#${points[i].axis}`).css("background-color", points[i].color);
+        }, 50*i);
+
+    }
 }
