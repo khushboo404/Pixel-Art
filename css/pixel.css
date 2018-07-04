@@ -1,32 +1,24 @@
 body{
     font-family: minecraftiaregular,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
-    background-color: darkslategrey;
-    /* background-image: url("../img/1.jpg"); */
+    /* background-color: darkslategrey; */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* button:hover {background-color: #b39494;} */
+.bg{
+    background-image: url("../img/1.jpg");
+}
 
 button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-/* .button:hover {background-color: cornflowerblue} */
 
 .button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-
-/* .container{
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-} */
 
 header{
     margin-top: 50px;
@@ -144,6 +136,17 @@ header .title a{
 
 .color-selector-row1 .btn-black{
     background-color: black;
+}
+
+.download{
+    margin-top: 20px;
+}
+
+.download button{
+    width: 150px;
+    height: 60px;
+    border: 1px solid;
+    box-shadow: 5px 5px #888888;
 }
 
 /* color selector row 2 */
@@ -291,7 +294,7 @@ header .title a{
 table,
   tr,
   td {
-    border: 1px solid white;
+    border: 1px solid grey;
   }
   
   table {
@@ -323,31 +326,41 @@ table,
 
   /* theme change */
 
-  .theme-change{
+  #theme-change{
     display: flex;
     margin-top: 20px;
-    justify-content: space-around;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
 #greenBackground{
     background-color: #008000;
     height: 30px;
+    margin-right: 5px;
 }
 
 #blueBackground{
     background-color: blue;
     height: 30px;
+    margin-right: 5px;
 }
 
 #greyBackground{
     background-color: grey;
     height: 30px;
+    margin-right: 5px;
 }
 
 #whiteBackground{
-    background-color: white;
+    background-color: yellow;
     height: 30px;
+    margin-right: 5px;
 }
+
+#original{
+    background-color: black;
+}
+
 
 @font-face {
     font-family: minecraftiaregular;
