@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+live-se<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script src="js/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/styles.css"> -->
     <link rel="stylesheet" href="css/pixel.css">
 </head>
 <body class="bg">
@@ -31,7 +29,7 @@
               <button type="button" class="btn btn-default" onclick="newArt()">NEW ART</button>
             </div>
             <div class="undo-redo">
-              <button type="button" class="btn btn-default" data-toggle="tooltip" title="UNDO" data-placement="auto left" style="margin-right: 20px;"><i class="fas fa-undo"></i></button>
+              <button type="button" class="btn btn-default" onclick="undoGrid()" data-toggle="tooltip" title="UNDO" data-placement="auto left" style="margin-right: 20px;"><i class="fas fa-undo"></i></button>
               <button type="button" class="btn btn-default" data-toggle="tooltip" title="PLAY" style="margin-left: 20px;" onclick="play()"><i class="fas fa-play"></i></button>
             </div>
             <div class="eraser-paint">
@@ -107,6 +105,6 @@
       $(document).ready(function(){
           $('[data-toggle="tooltip"]').tooltip();   
       });
-      </script>
+    </script>
 </body>
 </html>
