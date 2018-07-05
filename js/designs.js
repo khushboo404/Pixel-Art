@@ -116,6 +116,9 @@ function resetGrid(){
 
 function undoGrid(){
 
+    if(pointsList.length <= 1){
+        return;
+    }
     pointsList.pop();
     points = pointsList[pointsList.length -1 ];
     play();
