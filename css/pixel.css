@@ -1,9 +1,13 @@
-body{
+body {
     font-family: minecraftiaregular,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
-    /* background-color: darkslategrey; */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
 }
 
 .bg{
@@ -20,7 +24,9 @@ button:active {
     transform: translateY(4px);
 }
 
-header{
+/* =============HEADER DIV=============== */
+
+header {
     margin-top: 50px;
     display: flex;
     flex-wrap: nowrap;
@@ -41,157 +47,157 @@ header h1 {
     text-transform: uppercase;
 }
 
-.title{
+.title {
     float: right;
     margin-left: 430px;
 }
 
-header .title a{
+header .title a {
     color:#b17e7e;
 }
 
-/* left panel */
+/* ===============LEFT PANEL=================== */
 
-.left-panel{
+.left-panel {
     float: left;
     margin-top: 50px;
 }
 
-.left-panel-base{
+.left-panel-base {
     width: 100%;
 }
 
-.new-art button{
+.new-art button {
     width: 150px;
     height: 60px;
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-.undo-redo{
+.undo-redo {
     display: flex;
     margin-top: 20px;
     height: 60px;
 }
 
-.undo-redo button{
+.undo-redo button {
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-.undo-redo i{
+.undo-redo i {
     font-size: 30px;
 }
 
-.eraser-paint{
+.eraser-paint {
     display: flex;
     margin-top: 20px;
     height: 60px;
 }
 
-.eraser-paint button{
+.eraser-paint button {
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-.eraser-paint i{
+.eraser-paint i {
     font-size: 30px;
 }
 
-.color-selector-row1{
+.color-selector-row1 {
     display: flex;
     margin-top: 40px;
     height: 40px;
 }
 
-.color-selector-row1 .btn-pallete{
+.color-selector-row1 .btn-pallete {
     float: left;
     border: 2px solid #585858;
     border-width: 2px;
 }
 
-.color-selector-row1 button{
+.color-selector-row1 button {
     border-radius: 20px;
 }
 
-.color-selector-row1 .btn-red{
+.color-selector-row1 .btn-red {
     background-color: red;
 }
 
-.color-selector-row1 .btn-green{
+.color-selector-row1 .btn-green {
     background-color: green;
 }
 
-.color-selector-row1 .btn-blue{
+.color-selector-row1 .btn-blue {
     background-color: blue;
 }
 
-.color-selector-row1 .btn-orange{
+.color-selector-row1 .btn-orange {
     background-color: orange;
 }
 
-.color-selector-row1 .btn-white{
+.color-selector-row1 .btn-white {
     background-color: white;
 }
 
-.color-selector-row1 .btn-black{
+.color-selector-row1 .btn-black {
     background-color: black;
 }
 
-.download{
+.download {
     margin-top: 20px;
 }
 
-.download button{
+.download button {
     width: 150px;
     height: 60px;
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-/* color selector row 2 */
+/* *****color selector row 2************ */
 
-.color-selector-row2{
+.color-selector-row2 {
     display: flex;
     margin-top: 5px;
     height: 40px;
 }
 
-.color-selector-row2 .btn-pallete{
+.color-selector-row2 .btn-pallete {
     float: left;
     border: 2px solid #585858;
     border-width: 2px;
 }
 
-.color-selector-row2 button{
+.color-selector-row2 button {
     border-radius: 20px;
 }
 
-.color-selector-row2 .btn-aqua{
+.color-selector-row2 .btn-aqua {
     background-color: aqua;
 }
 
-.color-selector-row2 .btn-blueviolet{
+.color-selector-row2 .btn-blueviolet {
     background-color: blueviolet;
 }
 
-.color-selector-row2 .btn-brown{
+.color-selector-row2 .btn-brown {
     background-color: brown;
 }
 
-.color-selector-row2 .btn-chartreuse{
+.color-selector-row2 .btn-chartreuse {
     background-color: chartreuse;
 }
 
-.color-selector-row2 .btn-cornflowerblue{
+.color-selector-row2 .btn-cornflowerblue {
     background-color: cornflowerblue;
 }
 
-.color-selector-row2 .btn-crimson{
+.color-selector-row2 .btn-crimson {
     background-color: crimson;
 }
 
-/* color picker */
+/* ************color picker*************** */
 
 .color-selector-colorpicker{
     margin-top: 15px;
@@ -203,31 +209,31 @@ header .title a{
     border-radius: 20px
 }
 
-/* right panel */
+/* =============RIGHT PANEL============== */
 
-.right-panel{
+.right-panel {
     float: right;
     margin-top: 50px;
 }
 
-.right-panel-base{
+.right-panel-base {
     width: 100%;
 }
 
-.reset-grid button{
+.reset-grid button {
     width: 150px;
     height: 60px;
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-.col-size{
+.col-size {
     margin-top: 20px;
     display: flex;
     height: 60px;
 }
 
-.col-size .col-value{
+.col-size .col-value {
     border: 1px solid;
     box-shadow: 5px 5px #888888;
     width: 50px;
@@ -236,22 +242,22 @@ header .title a{
     padding-left: 5px;
 }
 
-.col-size .col{
+.col-size .col {
     margin: 0;
     margin-top: 15px;
 }
 
-.col-size h4{
+.col-size h4 {
     color: darkgray;
 }
 
-.row-size{
+.row-size {
     margin-top: 20px;
     display: flex;
     height: 60px;
 }
 
-.row-size .row-value{
+.row-size .row-value {
     border: 1px solid;
     box-shadow: 5px 5px #888888;
     width: 50px;
@@ -260,104 +266,99 @@ header .title a{
     padding-left: 5px;
 }
 
-.row-size .row{
+.row-size .row {
     margin: 0;
     margin-top: 15px;
 }
 
-.row-size h4{
+.row-size h4 {
     color: darkgray;
 }
 
-.submit{
+.submit {
     margin-top: 20px;
 }
 
-.submit button{
+.submit button {
     width: 150px;
     height: 60px;
     border: 1px solid;
     box-shadow: 5px 5px #888888;
 }
 
-/* middle panel */
+/* ============MIDDLE PANEL================ */
 
-.mid-panel{
-    /* float: center; */
+.mid-panel {
     margin-top: 50px;
 }
 
-.mid-panel-base{
+.mid-panel-base {
     padding: 0 40px;
 }
 
 table,
-  tr,
-  td {
-    border: 1px solid grey;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-  
-  tr {
-    height: 20px;
-  }
-  
-  td {
-    width: 20px;
-  }
-
-  .mid-panel-components table{
-      cursor: cell;
-  }
-
-  .mid-panel-components h2{
-      color: darkgray;
-      text-align: center;
-  }
-
-  .main{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* theme change */
-
-  #theme-change{
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content: center;
+tr,
+td {
+border: 1px solid grey;
 }
 
-#greenBackground{
+table {
+border-collapse: collapse;
+margin: 0 auto;
+}
+
+tr {
+height: 20px;
+}
+
+td {
+width: 20px;
+}
+
+.mid-panel-components table {
+    cursor: cell;
+}
+
+.mid-panel-components h2 {
+    color: darkgray;
+    text-align: center;
+}
+
+
+  /* ************Theme change***************** */
+
+#theme-change {
+display: flex;
+margin-top: 20px;
+margin-bottom: 20px;
+justify-content: center;
+}
+
+#greenBackground {
     background-color: #008000;
     height: 30px;
     margin-right: 5px;
 }
 
-#blueBackground{
+#blueBackground {
     background-color: blue;
     height: 30px;
     margin-right: 5px;
 }
 
-#greyBackground{
+#greyBackground {
     background-color: grey;
     height: 30px;
     margin-right: 5px;
 }
 
-#whiteBackground{
-    background-color: yellow;
+#whiteBackground {
+    background-color: wheat;
     height: 30px;
     margin-right: 5px;
 }
 
-#original{
+#original {
     background-color: black;
 }
 
