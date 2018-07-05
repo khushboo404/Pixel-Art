@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script src="js/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -31,12 +31,12 @@
               <button type="button" class="btn btn-default" onclick="newArt()">NEW ART</button>
             </div>
             <div class="undo-redo">
-              <button type="button" class="btn btn-default" style="margin-right: 20px;"><i class="fas fa-undo"></i></button>
-              <button type="button" class="btn btn-default" style="margin-left: 20px;" onclick="play()"><i class="fas fa-play"></i></button>
+              <button type="button" class="btn btn-default" data-toggle="tooltip" title="UNDO" data-placement="auto left" style="margin-right: 20px;"><i class="fas fa-undo"></i></button>
+              <button type="button" class="btn btn-default" data-toggle="tooltip" title="PLAY" style="margin-left: 20px;" onclick="play()"><i class="fas fa-play"></i></button>
             </div>
             <div class="eraser-paint">
-              <button type="button" class="btn btn-default" onclick="eraser()" style="margin-right: 20px;"><i class="fas fa-eraser"></i></button>
-              <button type="button" class="btn btn-default" onclick="selectColor()" style="margin-left: 20px;"><i class="fas fa-eye-dropper"></i></button>
+              <button type="button" class="btn btn-default" onclick="eraser()" data-toggle="tooltip" title="ERASER" style="margin-right: 20px;"><i class="fas fa-eraser"></i></button>
+              <button type="button" class="btn btn-default" onclick="selectColor()" data-toggle="tooltip" title="COLOR PICKER" data-placement="left" style="margin-left: 20px;"><i class="fas fa-eye-dropper"></i></button>
             </div>
             <div class="color-selector-row1">
               <button type="button" class="btn btn-pallete btn-red" onclick="setColor('#FF0000')"></button>
@@ -71,7 +71,7 @@
                 <button type="button" class="btn btn-default" onclick="changeTheme('#001a00')" id="greenBackground"></button>
                 <button type="button" class="btn btn-default" onclick="changeTheme('#00001a')"  id="blueBackground"></button>
                 <button type="button" class="btn btn-default" onclick="changeTheme('#404040')"  id="greyBackground"></button>
-                <button type="button" class="btn btn-default" onclick="changeTheme('#808000')" id="whiteBackground"></button>
+                <button type="button" class="btn btn-default" onclick="changeTheme('#FFFFFF')" id="whiteBackground"></button>
                 <button type="button" class="btn btn-default" onclick="addBackground()" id="original"></button>
                 </div>
               <table id="pixelCanvas"></table>
@@ -82,7 +82,7 @@
         <div class="right-panel-base">
           <div class="right-panel-componenets">
             <div class="reset-grid">
-              <button type="button" class="btn btn-default" onclick="resetGrid()">RESET GRID</button>
+              <button type="button" class="btn btn-default" onclick="clearGrid()">RESET GRID</button>
             </div>
             <form id="sizePicker">
               <div class="col-size">
@@ -103,5 +103,10 @@
       </div>
     </div>
     <script src="js/designs.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+      });
+      </script>
 </body>
 </html>
