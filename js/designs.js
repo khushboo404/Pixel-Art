@@ -1,12 +1,13 @@
-// Lad grid with 50*20
-const height = $("#inputHeight").val();
-const weight = $("#inputWidth").val();
+// Variable declaration
 
 let dropper = false;
-
 let points = [];
 let pointsList = [];
+let colorSelected = "#FFA500";
 
+// Default grid
+const height = $("#inputHeight").val();
+const weight = $("#inputWidth").val();
 
 for(let i=0;i<height;i++){
     let row = "<tr>";
@@ -15,23 +16,18 @@ for(let i=0;i<height;i++){
     }
     row+="</tr>";
     $("#pixelCanvas").append(row);
-
 }  
 
-
-let colorSelected = "#FFA500";
+// MakeGrid() Function
 
 function makeGrid() {
     //Empty Grid 
       
-      $("#pixelCanvas").empty();
-     
-      // Select size input
-      
+    $("#pixelCanvas").empty();
+
     const height = $("#inputHeight").val();
     const weight = $("#inputWidth").val();
   
-      
    for(let i=0;i<height;i++){
           let row = "<tr>";
           for(let j=0;j<weight;j++){
@@ -39,106 +35,101 @@ function makeGrid() {
           }
           row+="</tr>";
           $("#pixelCanvas").append(row);
-     
       }  
-    
     }
   
-  //Call makeGrid() Function
+//Call makeGrid() Function
   
-  $("#sizePicker").submit(function(event){
+    $("#sizePicker").submit(function(event){
     event.preventDefault();
-      makeGrid();
+        makeGrid();
     })
   
-//  select color from options
+//Colorpicker from ColorGrid
 
 function setColor(color){
     colorSelected = color;
 }
 
-// Eraser function
+//Eraser function
 
 function eraser(){
     colorSelected = "";
-  }
-    
+}
 
 $("#colorPicker").on("change", ()=>{
     setColor($("#colorPicker").val());
 });
 
-  // Select color input
+//Select color input
   
-  $( "#pixelCanvas" ).on( "click", "td", function( event ) {
-    if(dropper){
-        dropper = false;
-        colorSelected = $(this).css("background-color");
-        return;
-    }
+$( "#pixelCanvas" ).on( "click", "td", function( event ) {
+if(dropper){
+    dropper = false;
+    colorSelected = $(this).css("background-color");
+    return;
+}
 
-    $(this).css("background-color", colorSelected);
+$(this).css("background-color", colorSelected);
     points.push({
         axis: $(this).attr('id'),
         color: colorSelected
     });
-  });
+});
   
-  let down = false;
-  
-  $(document).mousedown(function () {
-      down = true;
-  })
-  $(document).mouseup(function () {
-      down = false;
-  });
-  
-  $('table').on('mouseover', 'td', function () {
-      if (down) {
-        var color = colorSelected;
-          $(this).css( 'background', color);
+let down = false;
 
-          points.push({
-              axis: $(this).attr('id'),
-              color: colorSelected
-          });
-      }
-  });
+$(document).mousedown(function () {
+    down = true;
+})
+$(document).mouseup(function () {
+    down = false;
+});
+
+$('table').on('mouseover', 'td', function () {
+    if (down) {
+    var color = colorSelected;
+        $(this).css( 'background', color);
+        points.push({
+            axis: $(this).attr('id'),
+            color: colorSelected
+        });
+    }
+});
   
+//Reset Grid
   
-  //Reset Grid
-  
-  function resetGrid(){
-    // event.preventDefault();
-    // $("#pixelCanvas").empty();
+function resetGrid(){
     const height = $("#inputHeight").val();
     const weight = $("#inputWidth").val();
-  
-      
-   for(let i=0;i<height;i++){
+   
+    for(let i=0;i<height;i++){
         for(let j=0;j<weight;j++){
-            // $(this).css('background-color','#2F4F4F');
             $(`#${i}_${j}`).css("background-color",'');
-          }
-      }  
-  }
+        }
+    }  
+}
 
-   //New Art Grid
+//New Art Grid
 
-  function newArt(){
-    $("#pixelCanvas").empty();
-  }
-  
-// theme change
+function newArt(){
+$("#pixelCanvas").empty();
+}
+
+// Theme change
 
 function changeTheme(color){
     $("body").removeClass("bg");
     $("body").css('background-color',color);
 }
 
+// Add original theme
+
 function addBackground(){
     $("body").addClass("bg");
 }
+
+// Save Pixel Art
 
 function downloadGrid(){
     setTimeout(()=>{
@@ -148,11 +139,13 @@ function downloadGrid(){
     },0);
 }
 
-
+// Dropper function
 
 function selectColor(){
     dropper = true;
 }
+
+// Play Pixel Art
 
 function play(){
     resetGrid();
@@ -163,3 +156,10 @@ function play(){
 
     }
 }
+
+function clearGrid(){
+    points = [];
+    resetGrid();
+}
+
+
