@@ -21,8 +21,7 @@ for(let i=0;i<height;i++){
 // MakeGrid() Function
 
 function makeGrid() {
-    //Empty Grid 
-      
+    //Empty Grid  
     $("#pixelCanvas").empty();
 
     const height = $("#inputHeight").val();
@@ -79,10 +78,13 @@ $(this).css("background-color", colorSelected);
   
 let down = false;
 
-$(document).mousedown(function () {
+$("#pixelCanvas").mousedown(function () {
+
+    
     down = true;
 })
-$(document).mouseup(function () {
+$("#pixelCanvas").mouseup(function () {
+    pointsList.push(points.slice());
     down = false;
 });
 
@@ -108,6 +110,15 @@ function resetGrid(){
             $(`#${i}_${j}`).css("background-color",'');
         }
     }  
+}
+
+// Undo Function
+
+function undoGrid(){
+
+    pointsList.pop();
+    points = pointsList[pointsList.length -1 ];
+    play();
 }
 
 //New Art Grid
@@ -156,6 +167,8 @@ function play(){
 
     }
 }
+
+//Clear Grid
 
 function clearGrid(){
     points = [];
